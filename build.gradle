@@ -16,39 +16,8 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'war'
 apply plugin: 'org.flywaydb.flyway'
-apply plugin: "jacoco"
-apply plugin: 'checkstyle'
 apply plugin: 'org.akhikhl.gretty'
 
-test {
-    beforeTest { descr ->
-        logger.warn("Starting Test ${descr.className} : ${descr.name}")
-    }
-}
-
-jacoco {
-    toolVersion = "0.7.4.201502262128"
-}
-
-checkstyle {
-    toolVersion = "6.14.1"
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.destination "${buildDir}/jacocoHtml"
-    }
-}
-
-checkstyleMain {
-    reports {
-        xml {
-            destination "build/reports/checkstyle/main.xml"
-        }
-    }
-}
 
 dependencies {
     compile 'mysql:mysql-connector-java:5.1.37'
