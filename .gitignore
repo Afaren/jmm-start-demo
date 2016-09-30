@@ -3,6 +3,8 @@
 
 # gradle build file
 .gradle
+gradle
+build
 
 # 对 demo 的思考
 step-into.md
