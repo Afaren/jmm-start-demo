@@ -1,14 +1,14 @@
 
 # create DB
-drop database if exists jmmStartDemo;
+DROP DATABASE IF EXISTS jmmStartDemo;
 CREATE DATABASE jmmStartDemo;
 
 # use DB
-use jmmStartDemo;
+USE jmmStartDemo;
 
 # create user_info_table
-drop table if exists users;
-create table users (
+DROP TABLE IF EXISTS  users;
+CREATE TABLE  users (
     id int not null primary key AUTO_INCREMENT,
     name varchar(100) not null,
     gender varchar(6) not null
@@ -19,3 +19,6 @@ INSERT INTO users(name, gender) VALUES( 'Bulma', 'female');
 INSERT INTO users(name, gender) VALUES( 'Vegeta', 'male');
 INSERT INTO users(name, gender) VALUES( 'ChiChi', 'female');
 INSERT INTO users(name, gender) VALUES( 'Goku', 'male');
+
+# show all user information from users
+SELECT * FROM jmmStartDemo.users;
