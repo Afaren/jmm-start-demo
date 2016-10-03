@@ -8,6 +8,8 @@
 ## 初始化数据库
 1. [~] $: cd jmm-start-demo
 2. [jmm-start-demo] $: ./db-initial.sh （需要输入 mysql root 的密码）  
+3. 修改 src/main/java/com/tw/rs/util/ReadUserData.java 中 PASSWORD 变量为你自己的 mysql root 密码  
+
 
 看到如下输出，表示数据库初始化成功
 ```shell 
