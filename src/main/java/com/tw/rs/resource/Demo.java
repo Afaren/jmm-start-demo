@@ -10,6 +10,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by afaren on 9/29/16.
@@ -23,7 +25,7 @@ public class Demo {
     public Response getUser(
             @PathParam("param") int userId) {
 
-        User user = getUserFromDB(userId);
+        User user = new ReadUserData().getUserById(userId);
 
         if (null != user) {
             return Response.status(Response.Status.OK).entity(user).build();
@@ -33,16 +35,20 @@ public class Demo {
 
     }
 
-    private User getUserFromDB(int userId) {
-        ReadUserData data = new ReadUserData();
-        User user = null;
-        try {
-            user = data.getUserById(userId);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+    @GET
+    @Path("/")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUsers() {
+
+        List<User> users = new ReadUserData().getAllUsers();
+
+        if (0 != users.size()) {
+            return Response.status(Response.Status.OK).entity(users).build();
+        }else{
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return user;
+
     }
+
+
 }
