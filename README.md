@@ -7,7 +7,7 @@
 1. [~] $: cd jmm-start-demo
 2. [jmm-start-demo] $: gradle idea
 3. [jmm-start-demo] $: gradle build
-4. [jmm-start-deom] $: gradle jettyRun
+4. [jmm-start-deom] $: gradle jettyRun  
 此时，在控制台下应该可以看到类似如下的输出：  
 ```shell
 [jmm-start-demo]$ gradle jettyRun
