@@ -48,8 +48,18 @@ Press any key to stop the server.
 2. 运行 `gradle jettyRun` 时，如果出现端口占用情况，请先将占用的端口的进程杀死再运行此命令  
 
 ## 在浏览器中验证结果
+### 获取指定用户信息
 打开浏览器，输入 `http://localhost:8080/jmm-start-demo/users/1`  
-将看到页面打印出 `{"id":1}`  
-改变 `1` 为其他数字，可以看到 `id` 随之改变 :)  
+将看到页面打印出 `{"id":1,"name":"Bulma","gender":"female"}`
+改变 URL 中的 `1` 为其他数字，可以看到打印用户信息随之改变 :)  
 
+### 获取所有用户信息
+打开浏览器，输入 `http://localhost:8080/jmm-start-demo/users/`  
+将看到页面打印出四个用户的信息
+```javascript
+[{"id":1,"name":"Bulma","gender":"female"},
+{"id":2,"name":"Vegeta","gender":"male"},
+{"id":3,"name":"ChiChi","gender":"female"},
+{"id":4,"name":"Goku","gender":"male"}]`
+```
 
