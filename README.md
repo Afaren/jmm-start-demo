@@ -50,7 +50,7 @@ Press any key to stop the server.
 ## 在浏览器中验证结果
 ### 获取指定用户信息
 打开浏览器，输入 `http://localhost:8080/jmm-start-demo/users/1`  
-将看到页面打印出 `{"id":1,"name":"Bulma","gender":"female"}`
+将看到页面打印出 `{"id":1,"name":"Bulma","gender":"female"}`  
 改变 URL 中的 `1` 为其他数字，可以看到打印用户信息随之改变 :)  
 
 ### 获取所有用户信息
