@@ -7,19 +7,15 @@
 
 ## 初始化数据库
 1. [~] $: cd jmm-start-demo
-2. [jmm-start-demo] $: `mysql -u root -p < create_db.sh` （需要输入 mysql root 的密码）
-3. [jmm-start-demo] $: `mysql -u root -p -e "select * from jmmStartDemo.users"` （需要输入 mysql root 的密码）  
+2. [jmm-start-demo] $: ./db-initial.sh （需要输入 mysql root 的密码）  
 
 看到如下输出，表示数据库初始化成功
 ```shell 
-+----+--------+--------+
-| id | name   | gender |
-+----+--------+--------+
-|  1 | Bulma  | female |
-|  2 | Vegeta | male   |
-|  3 | ChiChi | female |
-|  4 | Goku   | male   |
-+----+--------+--------+
+id	name	gender
+1	Bulma	female
+2	Vegeta	male
+3	ChiChi	female
+4	Goku	male
 ```
 
 ##  运行 demo
