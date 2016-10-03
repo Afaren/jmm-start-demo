@@ -1,13 +1,33 @@
 # jmm-start-demo
 
-## 安装 Gradle 
-`sudo apt install gradle`  
+## 配置环境 
+1. 安装 Gradle `sudo apt install gradle`
+2. 安装 MySQL `sudo apt install mysql-server`，具体可以参考 [这里](https://help.ubuntu.com/16.04/serverguide/mysql.html)
     
+
+## 初始化数据库
+1. [~] $: cd jmm-start-demo
+2. [jmm-start-demo] $: `mysql -u root -p < create_db.sh` （需要输入 mysql root 的密码）
+3. [jmm-start-demo] $: `mysql -u root -p -e "select * from jmmStartDemo.users"` （需要输入 mysql root 的密码）  
+
+看到如下输出，表示数据库初始化成功
+```shell 
++----+--------+--------+
+| id | name   | gender |
++----+--------+--------+
+|  1 | Bulma  | female |
+|  2 | Vegeta | male   |
+|  3 | ChiChi | female |
+|  4 | Goku   | male   |
++----+--------+--------+
+```
+
 ##  运行 demo
 1. [~] $: cd jmm-start-demo
 2. [jmm-start-demo] $: gradle idea
 3. [jmm-start-demo] $: gradle build
 4. [jmm-start-deom] $: gradle jettyRun  
+
 此时，在控制台下应该可以看到类似如下的输出：  
 ```shell
 [jmm-start-demo]$ gradle jettyRun
