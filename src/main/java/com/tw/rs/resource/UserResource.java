@@ -16,6 +16,7 @@ import javax.ws.rs.core.Response;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Created by afaren on 9/29/16.
@@ -52,7 +53,6 @@ public class UserResource {
 
 
     @GET
-    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {@ApiResponse(code = 200, message = "get all users successful"),
             @ApiResponse(code = 404, message = "get all users failed")})
@@ -65,10 +65,20 @@ public class UserResource {
         }
 
 
-        return Response.status(Response.Status.OK).entity(users).build();
+        List<Map> result = users
+                .stream()
+                .map(user -> {
 
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("id", user.getId());
+                    map.put("name", user.getName());
+                    map.put("gender", user.getGender());
 
+                    return map;
+                })
+                .collect(Collectors.toList());
+
+        return Response.status(Response.Status.OK).entity(result).build();
     }
-
 
 }
