@@ -2,7 +2,6 @@ package com.tw.rs.resource;
 
 import com.tw.rs.bean.User;
 import com.tw.rs.mapper.UserMapper;
-import com.tw.rs.util.ReadUserData;
 import com.wordnik.swagger.annotations.ApiParam;
 import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
