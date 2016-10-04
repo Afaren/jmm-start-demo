@@ -8,7 +8,7 @@
 ## 初始化数据库
 1. [~] $: cd jmm-start-demo
 2. [jmm-start-demo] $: ./db-initial.sh （需要输入 mysql root 的密码）  
-3. 修改 src/main/java/com/tw/rs/util/ReadUserData.java 中 PASSWORD 变量为你自己的 mysql root 密码  
+3. 修改 mysql 密码：将 src/main/resources/config.properties 中的 jdbc.password 一项的值修改为你自己的 mysql root 密码  
 
 
 看到如下输出，表示数据库初始化成功
@@ -22,9 +22,8 @@ id	name	gender
 
 ##  运行 demo
 1. [~] $: cd jmm-start-demo
-2. [jmm-start-demo] $: gradle idea
-3. [jmm-start-demo] $: gradle build
-4. [jmm-start-deom] $: gradle jettyRun  
+2. [jmm-start-demo] $: gradle build
+3. [jmm-start-deom] $: gradle jettyRun  
 
 此时，在控制台下应该可以看到类似如下的输出：  
 ```shell
