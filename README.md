@@ -1,8 +1,7 @@
 # jmm-start-demo
 
 ## 配置环境 
-1. 安装 Gradle `sudo apt install gradle`
-2. 安装 MySQL `sudo apt install mysql-server`，具体可以参考 [这里](https://help.ubuntu.com/16.04/serverguide/mysql.html)
+1. 安装 MySQL `sudo apt install mysql-server`，具体可以参考 [这里](https://help.ubuntu.com/16.04/serverguide/mysql.html)
     
 
 ## 初始化数据库
@@ -22,8 +21,7 @@ id	name	gender
 
 ##  运行 demo
 1. [~] $: cd jmm-start-demo
-2. [jmm-start-demo] $: gradle build
-3. [jmm-start-deom] $: gradle jettyRun  
+2. [jmm-start-deom] $: ./gradlew jettyRun  
 
 此时，在控制台下应该可以看到类似如下的输出：  
 ```shell
@@ -43,8 +41,8 @@ Press any key to stop the server.
 > Building 87% > :jettyRun           
 ```
 > 注意：  
-1. 在运行 `gradle build` 时，因为第一次下载依赖的 jar 包会花费大约一小时时间，请耐心等候  
-2. 运行 `gradle jettyRun` 时，如果出现端口占用情况，请先将占用的端口的进程杀死再运行此命令  
+1. 第一次运行 `./gradlew jettyRun` 时，因为下载安装 `gradle` 以及下载依赖的 jar 包会花费大约一小时时间，请耐心等候  
+2. 运行 `./gradlew jettyRun` 时，如果出现端口占用情况，请先将占用的端口的进程杀死再运行此命令  
 
 ## 在浏览器中验证结果
 ### 获取指定用户信息
