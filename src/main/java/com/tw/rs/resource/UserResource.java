@@ -2,9 +2,6 @@ package com.tw.rs.resource;
 
 import com.tw.rs.bean.User;
 import com.tw.rs.mapper.UserMapper;
-import com.wordnik.swagger.annotations.ApiParam;
-import com.wordnik.swagger.annotations.ApiResponse;
-import com.wordnik.swagger.annotations.ApiResponses;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -30,11 +27,8 @@ public class UserResource {
 
     @GET
     @Path("/{param}")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "get one user successful"),
-            @ApiResponse(code = 404, message = "get one user failed")})
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserById(
-            @ApiParam(name = "userId", value = "int", required = true)
             @PathParam("param") int userId) {
 
         User user = userMapper.getUserById(userId);
@@ -54,8 +48,6 @@ public class UserResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "get all users successful"),
-            @ApiResponse(code = 404, message = "get all users failed")})
     public Response getAllUsers() {
 
         List<User> users = userMapper.getAllUsers();
