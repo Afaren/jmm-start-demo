@@ -3,7 +3,6 @@
 
 # gradle build file
 .gradle
-gradle
 build
 
 # 对 demo 的思考
@@ -88,6 +87,7 @@ modules.xml
 
 # Package Files #
 *.jar
+!gradle/wrapper/*
 *.war
 *.ear
 
